@@ -1,0 +1,22 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spotify.Overlay"
+        xmlns:Controls="clr-namespace:Spotify.Overlay.Controls;assembly=Spotify.Overlay.Controls" 
+        x:Name="Main" 
+        x:Class="Spotify.Overlay.MainWindow"
+        mc:Ignorable="d"
+        Title="Spotify.Overlay" Height="150" Width="390" Topmost="True" WindowStyle="None" AllowsTransparency="True" ShowInTaskbar="False" ResizeMode="NoResize" MouseDoubleClick="Window_MouseDoubleClick" MouseDown="Main_MouseDown" UseLayoutRounding="False" Loaded="Main_Loaded" Opacity="0.7">
+    <Grid Background="#383838">
+        <Label x:Name="lblSongTitle" Content="" Margin="10,10,10,0" VerticalAlignment="Top" FontSize="20" Foreground="#ffffff" FontWeight="Bold"/>
+        <Label x:Name="lblArtist" Content="" Margin="10,52,10,65" FontSize="15" Foreground="#ffffff"/>
+        <WrapPanel Margin="10,90,65,10" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center">
+            <Controls:SpotifyPreviousButton x:Name="prevButton" Clicked="prevButton_Clicked" />
+            <Controls:SpotifyPlayPauseButton x:Name="playPauseButton" Clicked="playPauseButton_Clicked" IsPlaying="False" />
+            <Controls:SpotifyNextButton x:Name="nextButton" Clicked="nextButton_Clicked" />
+        </WrapPanel>
+        <Controls:SpotifySettingsButton x:Name="settingsButton" Margin="0,90,10,10" Width="50" Height="Auto" Clicked="settingsButton_Clicked" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
